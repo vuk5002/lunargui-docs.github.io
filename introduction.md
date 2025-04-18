@@ -44,6 +44,7 @@ int main(/*arguments*/){
 lets name it ShowWindow, you can name it whatever you want. In there we need to call 
 createWin: </span>
 
+## CreateWin function
 ```c
 void showWindow(){
 
@@ -92,7 +93,10 @@ uint16_t CreateWin_100( // 027 aka 0.27
     uint16_t flags,     // window flags (same as type)      (1.0v)
     uint16_t id         // window id (OUTDATED)             (1.0v)
 )
+
+
 ```
+## Code
 <span style="font-size:18px ; font-weight: bold;">We will be developing for Lunar 1.0.5 so we can call the newest
 function</span>
 
@@ -132,3 +136,25 @@ void showWindow(){
 <span style="font-size:18px ; font-weight: bold;">This may or may not change soon</span>
 
 </div>
+
+## Copy Paste
+```c
+#include <lunar.h>
+
+void showWindow(){
+    CreateWin(
+    "Hello, GUI!", 
+    /*default X,Y is 371/158*/ LWIN_DEFX, LWIN_DEFY, 
+    500, 100,
+    0x00292929, // soon outdated
+    LWIN_DARKV2, // looks best in my opinion, theres LWIN_DARKV1 and LWIN_FROST
+    LWIN_CLOSEMAXDRAG, // allow closing, maximizing, dragging, now we can go and disable those stuff (LWIN_CLOSEMAX) // disable drag (LWIN_CLOSEDRAG) // disable maximizing (LWIN_DRAG) // only allow drag
+    0
+    );
+}
+
+int main(){
+    showWindow(/*if you want user customazability, here pass argc, argv... and make sure function definition uses that*/);
+}
+
+```
