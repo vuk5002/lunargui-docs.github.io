@@ -147,3 +147,5 @@ int WINEVENT(){
 ```
 
 <img src="functionalprog.gif">
+
+<span style="font-size:18px ; font-weight: bold;">Goind further: </span> [Paint program tutorial](paintprog.md)
