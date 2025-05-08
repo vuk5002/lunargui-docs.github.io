@@ -25,12 +25,14 @@ void Textout(
     char*       text,   // text to output                               [0.0.27N]
     int         x,      // x pos of the string (relative to window)     [0.0.27N]
     int         y,      // y pos of the string (relative to window)     [0.0.27N]
-    uint32_t    color   // color of the string                          [0.0.27N] (doesnt do anything in 0.0.27)
+    uint32_t    color,  // color of the string                          [0.0.27N] (doesnt do anything in 0.0.27),
+    int         active, // for compatability it cannot be a bool        [0.0.27N]
+    int         id,     // ID of the text label                         [0.0.27N]
 );
 
 ```
 
-<span style="font-size:18px ; font-weight: bold;">This function is 100% backwards compatible with all of Lunar releases that include GUI.</span>
+<span style="font-size:18px ; font-weight: bold;">This function is 100% backwards compatible with all of Lunar releases that include GUI/TUI.</span>
 <div style="
     background-color:#004173;
     border-left: 5px solid #0066cc;
@@ -52,7 +54,7 @@ void Textout(
 ```c
 void showWindow(){
     CreateWin(
-    "Hello, GUI!", 
+    "Hello,GUI!", 
     /*default X,Y is 371/158*/ LWIN_DEFX, LWIN_DEFY, 
     500, 100,
     0x00292929, // soon outdated
@@ -63,8 +65,10 @@ void showWindow(){
 
     Textout(
         "Hello, World!",
-        6, 36,
-        0x00ffffff
+        6, 20, 
+        0x00ffffff,
+        1,
+        0 // ID 0
     );
 }
 ```

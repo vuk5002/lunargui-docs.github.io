@@ -1,4 +1,6 @@
 * [Home](/)
 * [Opening a blank window](introduction.md)
 * [Drawing text inside of a window](text.md)
+* [Messages / Events](msgevent.md)
+* [Making a functional program](function.md)
 * [UI Widgets](widgets.md)
