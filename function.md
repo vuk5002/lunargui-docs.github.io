@@ -27,6 +27,18 @@ int WINEVENT(
    // no inputs
 );
 ```
+<div style="
+    background: rgba(247, 250, 252, 0.98);
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 18px 22px;
+    margin: 1.5rem 0;
+    box-shadow: 0 1px 2px rgba(45, 55, 72, 0.05);
+">
+<span style="font-size:18px ; font-weight: bold;">Whenever a message comes trough, Lunar jumps to this function in the opened programs</span>
+</div>
+
+
 
 ```c
 int TranslateMsg(
@@ -34,6 +46,19 @@ int TranslateMsg(
     // we get the message
 );
 ```
+<div style="
+    background: rgba(247, 250, 252, 0.98);
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 18px 22px;
+    margin: 1.5rem 0;
+    box-shadow: 0 1px 2px rgba(45, 55, 72, 0.05);
+">
+<span style="font-size:18px ; font-weight: bold;">We use this to translate the message Lunar gave us to the messages you can see </span>
+
+[here](msgevent.md)
+</div>
+
 
 ```c
 int GetClickedWidgetID(){
@@ -41,6 +66,16 @@ int GetClickedWidgetID(){
     // we get the widget id when user clicks on it, if no widget is being clicked on, we get -1 (IMPORTANT)
 }
 ```
+<div style="
+    background: rgba(247, 250, 252, 0.98);
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 18px 22px;
+    margin: 1.5rem 0;
+    box-shadow: 0 1px 2px rgba(45, 55, 72, 0.05);
+">
+<span style="font-size:18px ; font-weight: bold;">Whenever a user clicks on a widget that has a valid ID (Each widget must have a unique and positive number ID) Lunar sends that ID to us and this is an easier way of checking if a user clicked on a widget</span>
+</div>
 
 ```c
 int PS2_MOUSEX(
@@ -148,4 +183,4 @@ int WINEVENT(){
 
 <img src="functionalprog.gif">
 
-<span style="font-size:18px ; font-weight: bold;">Goind further: </span> [Paint program tutorial](paintprog.md)
+<span style="font-size:18px ; font-weight: bold;">Going further: </span> [Paint program tutorial](paintprog.md)

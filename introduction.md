@@ -28,6 +28,8 @@
 <br>
 <img src="lunarstudio.png" alt="Description" width="1280" height="720">
 <br>
+<img src="lunarstudioex.PNG" width="1280" height="720">
+<br>
 <span style="font-size:18px ; font-weight: bold;">If you already have a project, open it up, if not start typing or click on New Project and create it</span>
 
 ## Entry Point
@@ -69,33 +71,40 @@ uint16_t CreateWin(
 <span style="font-size:18px ; font-weight: bold;">Currently only way to keep compatability is to use different
 functions that are made for older versions</span>
 
-```c
-uint16_t CreateWin_027( // 027 aka 0.27
-    char*    Name,      // title of the window              (0.0.27.0)
-    int      x,         // X position                       (0.0.27.0)
-    int      y,         // Y position                       (0.0.27.0)
-    int      w,         // width                            (0.0.27.0) [maxWidth introduced at 80]
-    int      h,         // height                           (0.0.27.0) [maxHeight introduced at 25]
-)
-```
-<span style="font-size:18px ; font-weight: bold;">Here OS will automaticlly use LunarDark v1 theme, in 0.27 OS will use LegacyGUI theme and leave
-everything (style, type) as default (type = LWIN_CLOSEMAXDRAG, style = LWIN_DARKV1) and id as NULL, please do NOT
-go beyond resolution of 720x400 (80x25 text mode converted into graphics mode), 0.27 will crash!</span>
+<details style="border: 1px solid #ddd; border-radius: 6px; padding: 0; margin: 10px 0;">
+  <summary style="background: #f5f5f5; padding: 8px 12px; font-weight: bold; cursor: pointer;"><strong>How to keep compatability</strong></summary>
 
-```c
-uint16_t CreateWin_100( // 027 aka 0.27
-    char*    Name,      // title of the window              (0.0.27.0)
-    int      x,         // X position                       (0.0.27.0)
-    int      y,         // Y position                       (0.0.27.0)
-    int      w,         // width                            (0.0.27.0) [maxWidth introduced at 80]
-    int      h,         // height                           (0.0.27.0) [maxHeight introduced at 25]
-    uint32_t color,     // background color of the window   (1.0v)
-    uint16_t flags,     // window flags (same as type)      (1.0v)
-    uint16_t id         // window id (OUTDATED)             (1.0v)
-)
+    ```c
+    uint16_t CreateWin_027( // 027 aka 0.27
+        char*    Name,      // title of the window              (0.0.27.0)
+        int      x,         // X position                       (0.0.27.0)
+        int      y,         // Y position                       (0.0.27.0)
+        int      w,         // width                            (0.0.27.0) [maxWidth introduced at 80]
+        int      h,         // height                           (0.0.27.0) [maxHeight introduced at 25]
+    )
+    ```
+
+  <div style="background: #f0f8ff; padding: 10px; border-left: 3px solid #4682b4;">
+    <span style="font-size:18px ; font-weight: bold;">Here OS will automaticlly use LunarDark v1 theme, in 0.27 OS will use LegacyGUI theme and leave
+    everything (style, type) as default (type = LWIN_CLOSEMAXDRAG, style = LWIN_DARKV1) and id as NULL, please do NOT
+    go beyond resolution of 720x400 (80x25 text mode converted into graphics mode), 0.27 will crash!</span>
+  </div>
+
+    ```c
+    uint16_t CreateWin_100( // 100 aka 1.0
+        char*    Name,      // title of the window              (0.0.27.0)
+        int      x,         // X position                       (0.0.27.0)
+        int      y,         // Y position                       (0.0.27.0)
+        int      w,         // width                            (0.0.27.0) [maxWidth introduced at 80]
+        int      h,         // height                           (0.0.27.0) [maxHeight introduced at 25]
+        uint32_t color,     // background color of the window   (1.0v)
+        uint16_t flags,     // window flags (same as type)      (1.0v)
+        uint16_t id         // window id (OUTDATED)             (1.0v)
+    )
+    ```
+</details>
 
 
-```
 ## Code
 <span style="font-size:18px ; font-weight: bold;">We will be developing for Lunar 1.0.5 so we can call the newest
 function</span>
@@ -119,7 +128,17 @@ void showWindow(){
 <span style="font-size:18px ; font-weight: bold;">Heres our window!</span>
 <span style="font-size:18px ; font-weight: bold;">(rounded corners have been removed)</span>
 <br>
+
+<div style="
+    background: rgba(247, 250, 252, 0.98);
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 18px 22px;
+    margin: 1.5rem 0;
+    box-shadow: 0 1px 2px rgba(45, 55, 72, 0.05);
+">
 <span style="font-size:18px ; font-weight: bold;">Window is automaticlly updated as OS keeps track of every made window in an array (with the id), goes trough theam and updates each one if something has changed</span>
+</div>
 
 <div style="
     background-color:#004173;

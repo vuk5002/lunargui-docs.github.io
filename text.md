@@ -72,6 +72,17 @@ void showWindow(){
     );
 }
 ```
+<div style="
+    background: rgba(247, 250, 252, 0.98);
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 18px 22px;
+    margin: 1.5rem 0;
+    box-shadow: 0 1px 2px rgba(45, 55, 72, 0.05);
+">
+<span style="font-size:18px ; font-weight: bold;">ID of the text is mainly used for drawing all the elements (you cant have 2 texts or 2 buttons or whatever combo of the same id, only the first one will be drawn) and for checking what widget is clicked, using the GetClickedWidgetID you get that same ID, and basiclly EVERY widget supported by LunarLand can be clicked (developers can just ignore the click ofc)</span>
+</div>
+
 <br>
 <img src="textout.png">
 <br><br>

@@ -83,7 +83,7 @@ int WINEVENT(){
 | 0006 | WIN_MAXIMIZE  | sent when window is maximized, on supported programs                  |
 | 0007 | WIN_RESTORE   | sent when window is restored from being in a maximized state          |
 | 0008 | WIN_NOTIFGET  | sent after program sends a notification to the user                   |
-| 000a | WIN_POWER     | sent before trying to shut down the PC                                |
+| 000a | WIN_POWER     | sent before trying to shut down the PC [WIP]                          |
 | 000b | WIN_PAINT     | sent when window needs to be redrawn                                  |
 | 000c | WIN_KEYDOWN   | sent when a key is pressed while the window has focus                 |
 | 000d | WIN_KEYUP     | sent when a key is released while the window has focus                |
