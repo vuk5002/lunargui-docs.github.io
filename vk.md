@@ -163,6 +163,69 @@ VkResult result = vkEnumeratePhysicalDevices(instance, &n_gpus, &gpu);
 // error if some shit is returned
 ```
 
+## vkCreateLunarSurfaceEXT
+##### Lunar specific function
+
+<span style="font-size:18px ; font-weight: bold;">While you essentially "can" write windows/mac vulkan programs and compile without errors in Lunar you wont be able to test them, there currently wont be any support for windows or mac emulation directly in Lunar, but there will be support for </span> [Open95](https://github.com/STierProgrammer/Open95) <span style="font-size:18px ; font-weight: bold;"> which will allow Lunar to run most of Windows programs trough the compatability layer between Lunar > Open95 > NT</span>
+
+<div style="
+    background-color:#004173;
+    border-left: 5px solid rgb(255, 0, 0);
+    color: #ffffff;
+    border-radius: 12px;
+    padding: 16px;
+    margin: 16px 0;
+    box-shadow: 0 2px 8px rgba(255, 255, 255, 0.1);
+">
+<span style="font-size:22px ; font-weight: bold;">🔷 CAREFUL!</span>
+
+<span style="font-size:18px ; font-weight: bold;">You wont get any errors/notes/warrnings if you use Windows, Mac, Wayland, Metal... surface functions</span>
+
+</div>
+
+<span style="font-size:18px ; font-weight: bold;">Function signature: </span>
+
+```c
+VKAPI_ATTR VkResult VKAPI_CALL vkCreateLunarSurfaceEXT(
+    VkInstance                                  instance,
+    const VkLunarSurfaceCreateFlagsEXT*         pCreateInfo,
+    const VkAllocationCallbacks*                pAllocator,
+    VkSurfaceKHR*                               pSurface
+);
+```
+
+| Argument         | Description                                                             |
+| ---------------- | ----------------------------------------------------------------------- |
+| instance         | VkInstance handle                                                       |
+| pCreateInfo      | A **pointer** to a **VkLunarSurfaceCreateFlagsEXT** (look below what it does)|
+| pAllocator       | **optional** **pointer** to a custom memory allocator                   |
+| pSurface         | A **pointer** to a **VkSurfaceKHR** handle                              |
+
+```c
+typedef struct VkLunarSurfaceCreateInfoEXT {
+    VkStructureType                    sType;
+    const void*                        pNext;
+    VkLunarSurfaceCreateFlagsEXT       flags;
+    void*                              buffer;
+    uint32_t                           width;
+    uint32_t                           height;
+    VkFormat                           format;
+    uint32_t                           pitch;
+} VkLunarSurfaceCreateInfoEXT;
+```
+
+| Argument         | Description                                                             |
+| ---------------- | ----------------------------------------------------------------------- |
+| sType            | struct type (set to VK_STRUCTURE_TYPE_LUNAR_SURFACE_CREATE_INFO_EXT)    |
+| pNext            | Used to extend a struct, not needed                                     |
+| flags            | reserved **flags**, please leave as 0                                   |
+| buffer           | A **pointer** to the window buffer                                      |
+| width            | Width of the window                                                     |
+| height           | Height of the window                                                    |
+| format           | Color format used (default is VK_FORMAT_R8G8B8A8_UNORM), aka RRGGBBAA   |
+
+
+
 ## vkGetPhysicalDeviceSurfaceSupportKHR 
 [Manual Page](https://registry.khronos.org/vulkan/specs/latest/man/html/vkGetPhysicalDeviceSurfaceSupportKHR.html)
 
